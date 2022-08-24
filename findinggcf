@@ -1,5 +1,3 @@
-//This program asks for two whole numbers to find the GCF. It also allows the user to quit by entering 0 for any of the whole numbers.
-
 // print1.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
@@ -39,11 +37,11 @@ int main()
 }
 
 void gcf(int a, int b) {
-	if (b == 0) {
+	if (b == 0) {					//This is the TERMINAL CASE
 		printgcf(a);
 	}
 	else {
-		gcf(b, a % b);
+		gcf(b, a % b);				//If b>a, then this SWITCHES THEIR ORDER
 	}
 }
 
