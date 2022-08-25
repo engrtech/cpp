@@ -1,0 +1,41 @@
+// print1.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
+
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+using namespace std;
+int rand_0toN1(int n);
+
+int main()
+{
+	int n = 0;
+	int r = 0;
+	srand(time(nullptr)); // Set seed for randomizing.
+	cout << "Enter number of dice to roll: ";
+	cin >> n;
+	for (int i = 1; i <= n; ++i) {
+		r = rand_0toN1(6) + 1; // Got a random number 0 to 5, then add 1
+		cout << r << " "; // Print it
+	}
+	return 0;
+}
+// Random 0-to-N1 Function.
+// Generate a random integer from 0 to N-1, with each
+// integer an equal probability.
+//
+int rand_0toN1(int n) { //Here the n=6 is a LOCAL different from earlier initialized n.
+	return rand() % n;  //Returning a random number from  0 to 5
+}
+
+// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
+// Debug program: F5 or Debug > Start Debugging menu
+
+// Tips for Getting Started: 
+//   1. Use the Solution Explorer window to add/manage files
+//   2. Use the Team Explorer window to connect to source control
+//   3. Use the Output window to see build output and other messages
+//   4. Use the Error List window to view errors
+//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
+//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
